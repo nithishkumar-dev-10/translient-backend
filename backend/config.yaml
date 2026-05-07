@@ -1,0 +1,69 @@
+mode:"sample"
+
+data:
+  full:
+    ticket: "backend/data/raw/ticket_confirmation.csv"
+    delay: "backend/data/raw/delay_prediction.csv"
+  sample:
+    ticket: "backend/data/sample_data.csv"
+    delay: "backend/data/sample_data.csv"
+  processed:
+    ticket: "backend/data/processed/ticket_cleaned.csv"
+    delay: "backend/data/processed/delay_cleaned.csv"
+
+features:
+  ticket:
+    target: "Confirmation Status"
+    drop:
+      - "PNR Number"
+      - "Current Status"
+      - "Age of Passengers"
+      - "Booking Channel"
+    use:
+      - "Train Number"
+      - "Date of Journey"
+      - "Class of Travel"
+      - "Quota"
+      - "Source Station"
+      - "Destination Station"
+      - "Booking Date"
+      - "Travel Distance"
+      - "Number of Stations"
+      - "Travel Time"
+      - "Train Type"
+      - "Seat Availability"
+      - "Special Considerations"
+      - "Holiday or Peak Season"
+      - "Waitlist Position"
+      - "Number of Passengers"
+
+  delay:
+    target: "Delay_min"
+    drop:
+      - "Train_id"
+      - "Train_name"
+      - "Sc_arr__time"
+      - "Act_arr_time"
+    use:
+      - "Train_no"
+      - "Source"
+      - "Destination"
+      - "Date"
+      - "Distance(Km)"
+      - "Season"
+      - "Run_frequency"
+
+models:
+  classifier:
+    path: "backend/ml/classifier_model.pkl"
+    type: "XGBClassifier"
+  regressor:
+    path: "backend/ml/regressor_model.pkl"
+    type: "XGBRegressor"
+
+reliability:
+  weights:
+    confirmation: 0.5
+    delay: 0.3
+    historical: 0.2
+
