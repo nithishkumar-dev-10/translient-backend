@@ -69,6 +69,8 @@ if __name__ == "__main__":
         "days_before_journey":    30
     }
 
+    
+
     delay_input = {
         "Train_no":          12238,
         "Source":            "Varanasi",
