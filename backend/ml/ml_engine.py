@@ -11,12 +11,14 @@ import joblib
 from sklearn.metrics import f1_score,mean_absolute_error,accuracy_score,mean_squared_error,roc_auc_score
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, OrdinalEncoder
 
+
 def load_config():
     with open("backend/config.yaml","r") as f:
         return yaml.safe_load(f)
-    
-def load_data(config):
 
+
+def load_data(config):
+ 
     mode=config["mode"]
 
     if mode=="sample":
@@ -36,6 +38,7 @@ def load_data(config):
     print(f"Delay    : {delay_df.shape}")
 
     return ticket_df, delay_df
+
 
 def get_ticket_column_types(df, target):
     # ordered columns — label encode
@@ -66,6 +69,7 @@ def get_ticket_column_types(df, target):
     ]
 
     return label_cols, onehot_cols, numeric_cols
+
 
 
 def get_delay_column_types(df, target):
