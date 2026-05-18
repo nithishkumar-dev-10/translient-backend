@@ -1,5 +1,6 @@
 mode:"sample"
 
+
 data:
   full:
     ticket: "backend/data/raw/ticket_confirmation.csv"
@@ -10,6 +11,8 @@ data:
   processed:
     ticket: "backend/data/processed/ticket_cleaned.csv"
     delay: "backend/data/processed/delay_cleaned.csv"
+
+
 
 features:
   ticket:
@@ -36,6 +39,7 @@ features:
       - "Holiday or Peak Season"
       - "Waitlist Position"
       - "Number of Passengers"
+
 
   delay:
     target: "Delay_min"
