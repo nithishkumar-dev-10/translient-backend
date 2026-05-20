@@ -1,6 +1,5 @@
 mode:"sample"
 
-
 data:
   full:
     ticket: "backend/data/raw/ticket_confirmation.csv"
@@ -56,6 +55,7 @@ features:
       - "Distance(Km)"
       - "Season"
       - "Run_frequency"
+
 
 models:
   classifier:
