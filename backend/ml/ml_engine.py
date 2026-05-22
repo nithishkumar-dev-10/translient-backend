@@ -50,6 +50,7 @@ def get_ticket_column_types(df, target):
     ]
 
     
+
     onehot_cols = [
         "Class of Travel",
         "Quota",
@@ -60,6 +61,7 @@ def get_ticket_column_types(df, target):
         "Seat Availability"
     ]
 
+    
     
     numeric_cols = [
         col for col in df.columns
