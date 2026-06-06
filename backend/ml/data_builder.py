@@ -34,8 +34,9 @@ def load_data(config):
     print(f"Mode     : {mode}")
 
 
-#cleaning the data 
 
+
+#cleaning the data 
 def clean_ticket(df, config):
     df.columns = df.columns.str.strip()
 
@@ -74,13 +75,14 @@ def clean_ticket(df, config):
     print(f"Ticket cleaned: {df.shape}")
     return df
 
+
+
 def clean_delay(df, config):
     # fix typos in column names from raw data
     df = df.rename(columns={
         "Dealy_min":    "Delay_min",
         "Destitnation": "Destination"
     })
-
     # strip whitespace from column names
     df.columns = df.columns.str.strip()
 
