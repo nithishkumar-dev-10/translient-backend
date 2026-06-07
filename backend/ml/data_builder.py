@@ -7,6 +7,7 @@ import os
 
 #loading the config 
 
+
 def load_config():
     with open("bakend/config.yaml","r") as f:
         return yaml.safe.load(f)
