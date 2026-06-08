@@ -17,6 +17,8 @@ def load_config():
         return yaml.safe_load(f)
 
 
+
+
 def load_data(config):
  
     mode=config["mode"]
@@ -38,6 +40,7 @@ def load_data(config):
     print(f"Delay    : {delay_df.shape}")
 
     return ticket_df, delay_df
+
 
 
 def get_ticket_column_types(df, target):
