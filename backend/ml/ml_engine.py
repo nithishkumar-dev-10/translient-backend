@@ -17,10 +17,8 @@ def load_config():
         return yaml.safe_load(f)
 
 
-
-
 def load_data(config):
- 
+
     mode=config["mode"]
 
     if mode=="sample":
