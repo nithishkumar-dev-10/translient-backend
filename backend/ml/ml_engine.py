@@ -11,7 +11,6 @@ import joblib
 from sklearn.metrics import f1_score,mean_absolute_error,accuracy_score,mean_squared_error,roc_auc_score
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder, OrdinalEncoder
 
-
 def load_config():
     with open("backend/config.yaml","r") as f:
         return yaml.safe_load(f)
@@ -49,9 +48,6 @@ def get_ticket_column_types(df, target):
         "journey_dayofweek",        # already numeric
         "days_before_journey"       # already numeric
     ]
-
-    
-
     onehot_cols = [
         "Class of Travel",
         "Quota",
@@ -72,7 +68,6 @@ def get_ticket_column_types(df, target):
     ]
 
     return label_cols, onehot_cols, numeric_cols
-
 
 
 def get_delay_column_types(df, target):
