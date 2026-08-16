@@ -11,8 +11,6 @@ data:
     ticket: "backend/data/processed/ticket_cleaned.csv"
     delay: "backend/data/processed/delay_cleaned.csv"
 
-
-
 features:
   ticket:
     target: "Confirmation Status"
@@ -38,7 +36,6 @@ features:
       - "Holiday or Peak Season"
       - "Waitlist Position"
       - "Number of Passengers"
-
 
   delay:
     target: "Delay_min"
